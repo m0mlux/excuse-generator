@@ -293,4 +293,22 @@ code {
     right: 0;
     border-right-color: var(--border);
   }
+  
+  .toast {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    padding: 15px 20px;
+    background: black;
+    color: white;
+    border-radius: 8px;
+  }
+
+  tbody tr {
+    cursor: pointer;
+  }
+
+  tbody tr:hover {
+    background-color: #eeeeee;
+  }
 }

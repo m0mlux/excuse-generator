@@ -1,6 +1,8 @@
 <template>
     <header>
-        <h1>Excuse Generator</h1>
+        <RouterLink to="/">
+            <strong>EG</strong>
+        </RouterLink>
 
         <nav>
             <RouterLink to="/">Accueil</RouterLink>

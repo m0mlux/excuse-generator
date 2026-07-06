@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted } from 'vue'
+import Footer from '../components/Footer.vue'
 
 const excuse = ref(null)
 
@@ -26,5 +27,10 @@ onMounted(() => {
         <button @click="getRandomExcuse">
             Changer d'excuse
         </button>
+
+        <RouterLink to="/add">
+            <button>Ajouter une excuse</button>
+        </RouterLink>        
     </main>
+    <Footer />
 </template>
