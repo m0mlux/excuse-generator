@@ -37,11 +37,17 @@ app.get('/excuses/:http_code', (req, res) => {
 app.post('/excuses', (req, res) => {
     const { http_code, tag, message } = req.body;
 
-    db.prepare(
-        'INSERT INTO excuses (http_code, tag, message) VALUES (?, ?, ?)'
-    ).run(http_code, tag, message);
+    try {
+        db.prepare(
+            'INSERT INTO excuses (http_code, tag, message) VALUES (?, ?, ?)'
+        ).run(http_code, tag, message);
 
-    res.json({
-        message: "Excuse ajoutée"
-    });
+        res.status(201).json({
+            message: "Excuse ajoutée"
+        });
+    } catch (error) {
+        res.status(400).json({
+            message: "Ce code HTTP existe déjà"
+        });
+    }
 });
